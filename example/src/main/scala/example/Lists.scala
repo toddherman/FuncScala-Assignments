@@ -25,13 +25,15 @@ object Lists {
    */
   def sum(xs: List[Int]): Int = {
     if (xs.isEmpty) 0
-    else xs.head + sum(xs.tail)
+    else xs.head + sum(xs.tail) // pop off head, sum, recurse through tail
     //or using case matching
     //    xs match {
     //      case x :: tail => x + sum(tail)
     //      case Nil => 0
     //    }
-    //or Apply binary operation op between successive elements of non-empty collection
+    //or use operator
+    // http://www.scala-lang.org/api/2.10.3/#scala.collection.Traversable
+    //  Apply binary operation op between successive elements of non-empty collection
     //  going left to right.
     //		xs.reduceLeft(_ + _)
   }  
