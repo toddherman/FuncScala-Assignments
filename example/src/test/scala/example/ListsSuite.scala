@@ -126,8 +126,10 @@ class ListsSuite extends FunSuite {
   test("max of a few numbers including negative") {
     assert(max(List(-14, 3, 7, 2)) === 7)
   }
-  test("max of empty list is java.util.NoSuchElementException") {
-    assert(max(List()) === 0)
+  test("max throws an exception if its argument is Nil") {
+    intercept[java.util.NoSuchElementException] {
+      max(List())
+    }
   }
   test("max with repetition and negatives") {
     assert(max(List(12, 3, -14, 7, 2, 12)) === 12)
