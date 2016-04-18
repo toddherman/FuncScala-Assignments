@@ -36,7 +36,7 @@ object Lists {
     //  Apply binary operation op between successive elements of non-empty collection
     //  going left to right.
     //		xs.reduceLeft(_ + _)
-  }  
+  }
   /**
    * This method returns the largest element in a list of integers. If the
    * list `xs` is empty it throws a `java.util.NoSuchElementException`.
@@ -56,13 +56,16 @@ object Lists {
       else a max maxIter(xs.head, xs.tail)
     }
     maxIter(xs.head, xs.tail)
-  }
-    //or using case matching
-    //    xs match {
-    //      case x :: tail => x + sum(tail)
-    //      case Nil => 0
+
+    //or 
+    //    val head = xs.head
+    //    val tail = xs.tail
+    //    if (tail.isEmpty) head
+    //    else {
+    //      val m = max(tail)
+    //      if (head >= m) head else m
     //    }
-    //or Apply binary operation op between successive elements of non-empty collection
-    //  going left to right.
-    //		xs.reduceLeft(_ + _)
+
+  }
+
 }
